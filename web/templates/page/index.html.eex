@@ -1,0 +1,30 @@
+<div class="jumbotron">
+  <h2><%= gettext "Welcome to %{name}", name: "Pomodoro!" %></h2>
+  <p class="lead">Project management with Pomodoro tricks.</p>
+</div>
+
+<div class="row marketing">
+  <div class="col-lg-6">
+    <h4>What's next?</h4>
+    <ul>
+      <li>
+      </li>
+      <li>
+      </li>
+      <li>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-lg-6">
+    <h4>Help</h4>
+    <ul>
+      <li>
+      </li>
+      <li>
+      </li>
+      <li>
+      </li>
+    </ul>
+  </div>
+</div>

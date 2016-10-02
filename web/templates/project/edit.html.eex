@@ -1,0 +1,11 @@
+<h2>Edit Project</h2>
+
+<%= form_for @changeset, project_path(@conn, :update, @project.id), fn f -> %>
+
+  <%= render "form.html", f: f %>
+
+<div class="input_wrapper center_block">
+  <%= submit "Update" %>
+  <a href="<%= project_path(@conn, :index) %>">Cancel</a>
+</div>
+<% end %>
