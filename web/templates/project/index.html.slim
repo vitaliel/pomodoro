@@ -1,0 +1,17 @@
+h2 Projects
+
+.row
+  .col-lg-12
+    a href="#{project_path(@conn, :new)}" New
+
+= for project <- @projects do
+  .row
+    .col-lg-1
+      a href="#{project_path(@conn, :edit, project.id)}" Edit
+
+    .col-lg-5
+      a href="#{project_path(@conn, :show, project.id)}"
+        = project.name
+
+    .col-lg-6
+      = project.started_on

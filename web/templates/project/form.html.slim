@@ -1,0 +1,21 @@
+- f = @f
+
+.input_wrapper.center_block
+  label Name
+  = text_input f, :name, size: 70
+  = error_tag f, :name
+
+.input_wrapper.center_block
+  label Description
+  = textarea f, :description, rows: 5, cols: 70
+  = error_tag f, :description
+
+.input_wrapper.center_block
+  label POM Estimates
+  = number_input f, :pom_estimates
+  = error_tag f, :pom_estimates
+
+.input_wrapper.center_block
+  label Started on
+  = date_select f, :started_on
+  = error_tag f, :started_on

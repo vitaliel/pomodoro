@@ -1,0 +1,17 @@
+h2 = @project.name
+
+.row
+  .col-lg-6
+    a href="#{project_path(@conn, :edit, @project.id)}" Edit
+
+.row
+  .col-lg-6
+    = "Started on: #{@project.started_on}"
+
+.row
+  .col-lg-6
+    = "Pom estimates: #{@project.pom_estimates}"
+
+.row
+  .col-lg-6
+    = @project.description
