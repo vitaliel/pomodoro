@@ -13,5 +13,8 @@ h2 Projects
       a href="#{project_path(@conn, :show, project.id)}"
         = project.name
 
-    .col-lg-6
+    .col-lg-5
       = project.started_on
+
+    .col-lg-1
+      = link "Delete", to: project_path(@conn, :delete, project), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
