@@ -18,6 +18,7 @@ defmodule Pomodoro.Router do
 
     get "/", PageController, :index
     resources "/projects", ProjectController
+    resources "/contexts", ContextController
   end
 
   # Other scopes may use custom stacks.

@@ -17,7 +17,10 @@
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
             <li>
-              <a href="<%= project_path(@conn, :index) %>">Projects</a>
+              <%= link "Projects", to: project_path(@conn, :index) %>
+            </li>
+            <li>
+              <%= link "Contexts", to: context_path(@conn, :index) %>
             </li>
           </ul>
         </nav>
