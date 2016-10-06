@@ -19,7 +19,6 @@
             <li>
               <a href="<%= project_path(@conn, :index) %>">Projects</a>
             </li>
-            <li>menu 2</li>
           </ul>
         </nav>
       </header>

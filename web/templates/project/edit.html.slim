@@ -3,6 +3,6 @@ h2 Edit Project
 = form_for @changeset, project_path(@conn, :update, @project.id), fn f ->
   = render "form.html", f: f
 
-  .input_wrapper.center_block
-    = submit "Update"
-    a href="#{project_path(@conn, :index)}" Cancel
+  .form-group
+    = submit "Update", class: "btn btn-primary"
+    = link "Cancel", to: project_path(@conn, :index), class: "btn btn-default"

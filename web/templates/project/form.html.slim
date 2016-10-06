@@ -1,21 +1,21 @@
 - f = @f
 
-.input_wrapper.center_block
+.form-group
   label Name
-  = text_input f, :name, size: 70
+  = text_input f, :name, size: 70, class: "form-control"
   = error_tag f, :name
 
-.input_wrapper.center_block
+.form-group
   label Description
-  = textarea f, :description, rows: 5, cols: 70
+  = textarea f, :description, rows: 5, class: "form-control"
   = error_tag f, :description
 
-.input_wrapper.center_block
+.form-group
   label POM Estimates
-  = number_input f, :pom_estimates
+  = number_input f, :pom_estimates, class: "form-control"
   = error_tag f, :pom_estimates
 
-.input_wrapper.center_block
+.form-group
   label Started on
-  = date_select f, :started_on
+  = date_select f, :started_on, class: "form-control"
   = error_tag f, :started_on

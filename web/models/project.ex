@@ -14,8 +14,9 @@ defmodule Pomodoro.Project do
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """
-  def changeset(struct, params \\ %{}) do
-    struct
+  def changeset(cs, params \\ %{}) do
+    params = Map.put_new(params, "started_on", Ecto.Date.utc)
+    cs
     |> cast(params, [:name, :started_on, :description, :pom_estimates])
     |> validate_required([:name, :started_on, :pom_estimates])
   end
