@@ -4,16 +4,21 @@ h2 Projects
   .col-lg-12
     = link "New", to: project_path(@conn, :new), class: "btn btn-primary"
 
-= for project <- @projects do
+= for {context_id, projects} <- @projects do
   .row
-    .col-lg-1
-      = link "Edit", to: project_path(@conn, :edit, project.id)
+    .col-lg-12
+      strong
+        = context_id == nil && "No Context" || Enum.at(projects, 0).context.name
+  = for project <- projects do
+    .row
+      .col-lg-1
+        = link "Edit", to: project_path(@conn, :edit, project.id)
 
-    .col-lg-5
-      = link project.name, to: project_path(@conn, :show, project.id)
+      .col-lg-5
+        = link project.name, to: project_path(@conn, :show, project.id)
 
-    .col-lg-5
-      = project.started_on
+      .col-lg-5
+        = project.started_on
 
-    .col-lg-1
-      = link "Delete", to: project_path(@conn, :delete, project.id), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+      .col-lg-1
+        = link "Delete", to: project_path(@conn, :delete, project.id), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"

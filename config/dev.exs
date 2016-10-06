@@ -41,3 +41,5 @@ config :pomodoro, Pomodoro.Repo,
   database: "pomodoro_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :slime, :keep_lines, true

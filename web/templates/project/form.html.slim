@@ -11,6 +11,11 @@
   = error_tag f, :description
 
 .form-group
+  label Context
+  = select_context(f, :context_id, class: "form-control")
+  = error_tag f, :context_id
+
+.form-group
   label POM Estimates
   = number_input f, :pom_estimates, class: "form-control"
   = error_tag f, :pom_estimates

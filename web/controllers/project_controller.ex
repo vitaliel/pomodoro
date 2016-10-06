@@ -3,7 +3,14 @@ defmodule Pomodoro.ProjectController do
   alias Pomodoro.{Project, Repo}
 
   def index(conn, _params) do
-    projects = Repo.all(Project)
+    projects = Repo.all(Project.sorted_by_context) |> Repo.preload(:context)
+    projects_map = Enum.group_by(projects, fn p -> p.context_id end)
+    projects = Map.to_list(projects_map)
+      |> Enum.sort(
+        fn {_, [p1 |_]}, {_, [p2| _]} ->
+          (p1.context && p1.context.position || 999) <
+          (p2.context && p2.context.position || 999)
+      end)
     render(conn, "index.html", projects: projects)
   end
 

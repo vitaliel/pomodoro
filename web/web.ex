@@ -51,6 +51,7 @@ defmodule Pomodoro.Web do
 
       import Pomodoro.Router.Helpers
       import Pomodoro.ErrorHelpers
+      import Pomodoro.ProjectHelpers
       import Pomodoro.Gettext
     end
   end
