@@ -14,10 +14,10 @@ h2 Projects
       .col-lg-1
         = link "Edit", to: project_path(@conn, :edit, project.id)
 
-      .col-lg-5
+      .col-lg-8
         = link project.name, to: project_path(@conn, :show, project.id)
 
-      .col-lg-5
+      .col-lg-2
         = project.started_on
 
       .col-lg-1
