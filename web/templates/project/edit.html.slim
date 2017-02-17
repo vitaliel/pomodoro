@@ -4,5 +4,10 @@ h2 Edit Project
   = render "form.html", f: f
 
   .form-group
+    label Completed?
+    = checkbox f, :is_completed, class: "form-control"
+    = error_tag f, :is_completed
+
+  .form-group
     = submit "Update", class: "btn btn-primary"
     = link "Cancel", to: project_path(@conn, :index), class: "btn btn-default"
