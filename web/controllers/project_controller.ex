@@ -2,8 +2,9 @@ defmodule Pomodoro.ProjectController do
   use Pomodoro.Web, :controller
   alias Pomodoro.{Project, Repo}
 
-  def index(conn, _params) do
-    projects = Repo.all(Project.sorted_by_context) |> Repo.preload(:context)
+  def index(conn, params) do
+    list_type = params["type"]
+    projects = Repo.all(Project.sorted_by_context(list_type)) |> Repo.preload(:context)
     projects_map = Enum.group_by(projects, fn p -> p.context_id end)
     projects = Map.to_list(projects_map)
       |> Enum.sort(

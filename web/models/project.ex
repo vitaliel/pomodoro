@@ -54,12 +54,12 @@ defmodule Pomodoro.Project do
     end
   end
 
-  def sorted_by_context(type \\ :active) do
+  def sorted_by_context(type) do
     query = from p in __MODULE__,
       left_join: c in assoc(p, :context),
       order_by: [c.position, p.name]
 
-    query = if type == :active do
+    query = if type == :active || type == "active" do
       from q in query,
         where: is_nil(q.completed_at)
     else

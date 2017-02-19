@@ -3,6 +3,8 @@ h2 Projects
 .row
   .col-lg-12
     = link "New", to: project_path(@conn, :new), class: "btn btn-primary"
+    = link "Active", to: project_path(@conn, :index, type: "active")
+    = link "All", to: project_path(@conn, :index, type: "all")
 
 = for {context_id, projects} <- @projects do
   .row
